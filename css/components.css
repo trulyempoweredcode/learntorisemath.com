@@ -1658,6 +1658,7 @@
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .pathway-card:hover {
