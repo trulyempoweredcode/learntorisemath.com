@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programmes &amp; Pricing | Learn to Rise Maths</title>
-  <meta name="description" content="Two distinct pathways — specialist coaching for intensive intervention, or structured examination preparation. Cambridge University-educated specialist with 20+ years' experience.">
+  <meta name="description" content="Two distinct pathways, specialist coaching for intensive intervention, or structured examination preparation. Cambridge University-educated specialist with 20+ years' experience.">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
 </head>
@@ -13,47 +13,44 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- SECTION: nav -->
-  <nav class="nav" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav__inner">
-        <a href="../" class="nav__brand">
-          <span class="nav__name">Learn to Rise</span>
-          <span class="nav__title">Specialist Maths Support</span>
-        </a>
-
-        <div class="nav__links">
-          <a href="../" class="nav__link">Home</a>
-          <a href="../programmes/" class="nav__link nav__link--active">Programmes &amp; Pricing</a>
-          <div class="nav__item">
-            <a href="../about/" class="nav__link">About</a>
-            <div class="nav__dropdown">
-              <a href="../about/" class="nav__dropdown-link">About</a>
-              <a href="../faq/" class="nav__dropdown-link">FAQ</a>
-              <a href="../insights/" class="nav__dropdown-link">Insights</a>
-            </div>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="../" class="nav__brand">
+        <span class="nav__name">Learn to Rise</span>
+      </a>
+      <div class="nav__links">
+        <a href="../" class="nav__link">Home</a>
+        <a href="../programmes/" class="nav__link nav__link--active">Programmes &amp; Pricing</a>
+        <div class="nav__item">
+          <a href="../about/" class="nav__link">About</a>
+          <div class="nav__dropdown">
+            <a href="../about/" class="nav__dropdown-link">About Learn to Rise</a>
+            <a href="../faq/" class="nav__dropdown-link">FAQ</a>
+            <a href="../insights/" class="nav__dropdown-link">Insights</a>
           </div>
-          <a href="../contact/" class="nav__link">Contact</a>
-          <a href="../contact/" class="btn btn--primary nav__cta">Book a Free Conversation</a>
         </div>
-
-        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-          <span class="nav__toggle-bar"></span>
-        </button>
+        <a href="../testimonials/" class="nav__link">Testimonials</a>
+        <a href="../contact/" class="nav__link">Get in Touch</a>
+        <a href="../contact/" class="btn btn--primary nav__cta">Book a Free Conversation</a>
       </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
     </div>
-
-    <div class="nav__mobile">
-      <a href="../" class="nav__link">Home</a>
-      <a href="../programmes/" class="nav__link nav__link--active">Programmes &amp; Pricing</a>
-      <a href="../about/" class="nav__link">About</a>
-      <a href="../faq/" class="nav__dropdown-link">FAQ</a>
-      <a href="../insights/" class="nav__dropdown-link">Insights</a>
-      <a href="../contact/" class="nav__link">Contact</a>
-      <a href="../contact/" class="btn btn--primary">Book a Free Conversation</a>
+    <div class="nav__mobile" id="mobile-menu" role="menu">
+      <a href="../" class="nav__link" role="menuitem">Home</a>
+      <a href="../programmes/" class="nav__link nav__link--active" role="menuitem">Programmes &amp; Pricing</a>
+      <a href="../about/" class="nav__link" role="menuitem">About Learn to Rise</a>
+      <a href="../faq/" class="nav__link" role="menuitem">FAQ</a>
+      <a href="../insights/" class="nav__link" role="menuitem">Insights</a>
+      <a href="../testimonials/" class="nav__link" role="menuitem">Testimonials</a>
+      <a href="../contact/" class="nav__link" role="menuitem">Get in Touch</a>
+      <a href="../contact/" class="btn btn--primary" role="menuitem">Book a Free Conversation</a>
     </div>
   </nav>
+  <!-- /SECTION: nav -->
 
   <main id="main-content">
 
@@ -61,14 +58,14 @@
     <section class="page-header">
       <div class="container">
         <h1>Programmes &amp; Pricing</h1>
-        <p>Two distinct pathways — specialist coaching for intensive intervention, or structured examination preparation. Cambridge University-educated specialist with 20+ years' experience and limited availability.</p>
+        <p>Two distinct pathways, specialist coaching for intensive intervention, or structured examination preparation. Cambridge University-educated specialist with 20+ years' experience and limited availability.</p>
       </div>
     </section>
 
     <!-- SECTION: intro -->
     <section class="section">
       <div class="container">
-        <div class="programme-intro">
+        <div class="programme-intro reveal">
           <h2>Why Long-Term Support Matters</h2>
           <p>I work with a small number of students at any one time, which allows me to build a genuinely individualised approach. Each child's learning profile, emotional responses, and pace are factored into how sessions are structured and adapted over time.</p>
           <p>Short-term interventions rarely address the deeper patterns behind persistent difficulties. Long-term support creates the consistency and trust needed for meaningful, lasting progress.</p>
@@ -88,7 +85,7 @@
         <h2>Two Programmes, One Goal</h2>
         <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Structured support tailored to where your child is now and where they need to be.</p>
 
-        <div class="pathway-grid">
+        <div class="pathway-grid reveal-stagger">
 
           <!-- Card 1: Examination Preparation -->
           <div class="pathway-card">
@@ -208,7 +205,7 @@
     </section>
 
     <!-- SECTION: investment -->
-    <section class="section investment">
+    <section class="section investment reveal">
       <div class="container">
         <div class="investment__inner">
           <div class="text-center">
@@ -271,7 +268,7 @@
     </section>
 
     <!-- SECTION: trust-bar -->
-    <div class="trust-bar">
+    <div class="trust-bar reveal">
       <div class="container">
         <div class="trust-bar__inner">
           <div class="trust-bar__item">
@@ -303,10 +300,10 @@
     </div>
 
     <!-- SECTION: cta -->
-    <section class="section cta-banner">
+    <section class="section cta-banner reveal">
       <div class="container">
         <h2>Not Sure Which Pathway Fits?</h2>
-        <p>That's completely fine. An initial conversation will help us work out what's right for your child — with no obligation.</p>
+        <p>That's completely fine. An initial conversation will help us work out what's right for your child, with no obligation.</p>
         <a href="../contact/" class="btn btn--accent">Book a Free Conversation</a>
       </div>
     </section>

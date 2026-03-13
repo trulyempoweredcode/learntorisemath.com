@@ -177,7 +177,35 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // -------------------------------------------------
-  // 5. Insights Shuffle
+  // 5. Scroll Reveal (IntersectionObserver)
+  // -------------------------------------------------
+  var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '-40px'
+    });
+
+    revealEls.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    // Fallback: just show everything
+    revealEls.forEach(function (el) {
+      el.classList.add('visible');
+    });
+  }
+
+  // -------------------------------------------------
+  // 6. Insights Shuffle
   // -------------------------------------------------
   var shuffleBtns = document.querySelectorAll('.shuffle-btn');
   var insightsGrid = document.querySelector('.insights-grid');
