@@ -378,7 +378,7 @@
   .hero__content {
     order: 1;
     flex: 0 0 50%;
-    padding: var(--space-3xl) var(--space-2xl) var(--space-3xl) var(--space-2xl);
+    padding: var(--space-3xl);
     display: flex;
     flex-direction: column;
     justify-content: center;
