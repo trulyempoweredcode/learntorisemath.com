@@ -344,7 +344,7 @@
 
 .hero__image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
 }
@@ -370,14 +370,14 @@
   }
 
   .hero__inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
+    display: flex;
     max-width: none;
     padding: 0;
   }
 
   .hero__content {
     order: 1;
+    flex: 0 0 50%;
     padding: var(--space-4xl) var(--space-3xl) var(--space-4xl) max(var(--space-3xl), calc((100% - var(--container-width, 1200px)) / 2 + var(--space-xl)));
     display: flex;
     flex-direction: column;
@@ -386,7 +386,17 @@
 
   .hero__image-wrap {
     order: 2;
-    min-height: 500px;
+    flex: 0 0 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+    object-fit: cover;
+    display: block;
   }
 
   .hero__heading {
