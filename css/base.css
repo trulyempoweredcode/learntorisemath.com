@@ -223,6 +223,20 @@ strong {
   color: var(--color-text-inverse);
 }
 
+.section--dark .btn--secondary {
+  color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+}
+
+.section--dark .btn--secondary:hover {
+  background-color: var(--color-text-inverse);
+  color: var(--color-bg-dark);
+}
+
+.section--dark .section-label {
+  color: var(--color-secondary-light);
+}
+
 /* Grid */
 .grid {
   display: grid;
