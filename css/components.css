@@ -270,7 +270,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  align-items: center;
+  align-items: stretch;
 }
 
 .hero__content {
@@ -379,6 +379,9 @@
   .hero__content {
     order: 1;
     padding: var(--space-4xl) var(--space-3xl) var(--space-4xl) max(var(--space-3xl), calc((100% - var(--container-width, 1200px)) / 2 + var(--space-xl)));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero__image-wrap {
