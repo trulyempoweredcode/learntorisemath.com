@@ -72,6 +72,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
+
+  // -------------------------------------------------
+  // 2b. Compact Scroll Header
+  // Shows compact bar when scrolled past the main nav.
+  // -------------------------------------------------
+  var mainNav = document.querySelector('.nav');
+  var scrollNav = document.querySelector('.nav-scroll');
+
+  if (mainNav && scrollNav) {
+    var navHeight = mainNav.offsetHeight;
+    var scrollToggle = scrollNav.querySelector('.nav-scroll__toggle');
+
+    // Compact bar hamburger opens the main mobile menu
+    if (scrollToggle && toggle && mobileMenu) {
+      scrollToggle.addEventListener('click', function () {
+        var isOpen = toggle.classList.toggle('nav__toggle--open');
+        mobileMenu.classList.toggle('nav__mobile--open', isOpen);
+        mobileMenu.classList.toggle('nav__mobile--from-scroll', isOpen);
+        body.style.overflow = isOpen ? 'hidden' : '';
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > navHeight) {
+        scrollNav.classList.add('nav-scroll--visible');
+      } else {
+        scrollNav.classList.remove('nav-scroll--visible');
+      }
+    }, { passive: true });
+  }
+
   // -------------------------------------------------
   // 3. Mobile Sub-menu Accordion (editor-generated nav)
   // -------------------------------------------------

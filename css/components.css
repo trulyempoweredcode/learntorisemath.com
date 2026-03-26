@@ -312,6 +312,104 @@
 }
 
 /* =============================================
+   COMPACT SCROLL HEADER
+   Fixed bar that slides in when user scrolls past main nav
+   ============================================= */
+.nav-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-scroll--visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-scroll__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.nav-scroll__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.nav-scroll__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-scroll__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-scroll__cta {
+  display: none;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.nav-scroll__cta:hover {
+  color: var(--color-primary-dark);
+}
+
+@media (min-width: 600px) {
+  .nav-scroll__cta {
+    display: inline;
+  }
+}
+
+.nav-scroll__toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-scroll__toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+}
+
+/* When opened from the compact scroll header, start below it */
+.nav__mobile--from-scroll {
+  top: 56px;
+  z-index: 201;
+}
+
+/* =============================================
    HERO SECTION
    Two-column with image placeholder + key
    feature bullets
