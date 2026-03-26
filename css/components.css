@@ -1099,47 +1099,23 @@
 
 
   .hero__inner {
-
-    display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 0;
-
-    max-width: none;
-
-    padding: 0;
-
+    overflow: visible;
   }
-
-
 
   .hero__content {
-
-    padding: var(--space-3xl);
-
+    padding: var(--space-3xl) var(--space-xl) var(--space-3xl) var(--space-2xl);
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
-    max-width: 680px;
-
-    margin-left: auto;
-
   }
 
-
-
   .hero__image-wrap {
-
+    margin-left: calc(-50vw + 50%);
     min-height: 500px;
-
     height: 100%;
-
     overflow: hidden;
-
   }
 
 
