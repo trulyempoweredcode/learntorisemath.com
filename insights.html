@@ -1,274 +1,278 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learning: Quotes &amp; Insights, a collection of ideas, evidence, and inspiration about learning, curated by Learn to Rise.">
-  <title>Insights | Learn to Rise | Quotes &amp; Ideas About Learning</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learning: Quotes &amp; Insights, a collection of ideas, evidence, and inspiration about learning, curated by Learn to Rise.">
+  <title>Insights | Learn to Rise | Quotes &amp; Ideas About Learning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <!-- PROFILE:schema -->
+  <!-- /PROFILE:schema -->
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- SECTION: nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">
+        <!-- PROFILE:logo --><!-- /PROFILE:logo -->
+        <span class="nav__name"><!-- PROFILE:site_title -->Learn to Rise<!-- /PROFILE:site_title --></span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="programmes.html" class="nav__link">Programmes &amp; Pricing</a>
+        <div class="nav__dropdown">
+          <button class="nav__link nav__link--has-children nav__link--active" aria-expanded="false" aria-haspopup="true">About <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav__dropdown-menu">
+            <a href="about.html" class="nav__dropdown-link">About Learn to Rise</a>
+            <a href="faq.html" class="nav__dropdown-link">FAQ</a>
+            <a href="insights.html" class="nav__dropdown-link nav__dropdown-link--active">Insights</a>
+          </div>
+        </div>
+        <a href="testimonials.html" class="nav__link">Testimonials</a>
+        <a href="contact.html" class="nav__link">Get in Touch</a>
+        <a href="contact.html" class="btn btn--primary nav__cta">Book a Free Conversation</a>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu" role="menu">
+      <a href="index.html" class="nav__link" role="menuitem">Home</a>
+      <a href="programmes.html" class="nav__link" role="menuitem">Programmes &amp; Pricing</a>
+      <div class="nav__mobile-group">
+        <div class="nav__mobile-parent">
+          <span class="nav__link" role="menuitem">About</span>
+          <button class="nav__mobile-expand" aria-label="Expand About" aria-expanded="false"><svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="nav__mobile-children" role="menu" hidden>
+          <a href="about.html" class="nav__link nav__link--child" role="menuitem">About Learn to Rise</a>
+          <a href="faq.html" class="nav__link nav__link--child" role="menuitem">FAQ</a>
+          <a href="insights.html" class="nav__link nav__link--child nav__link--active" role="menuitem">Insights</a>
+        </div>
+      </div>
+      <a href="testimonials.html" class="nav__link" role="menuitem">Testimonials</a>
+      <a href="contact.html" class="nav__link" role="menuitem">Get in Touch</a>
+      <a href="contact.html" class="btn btn--primary" role="menuitem">Book a Free Conversation</a>
+    </div>
+  </nav>
+  <!-- /SECTION: nav -->
+  <div class="nav-scroll" aria-hidden="true">
+    <div class="container nav-scroll__inner">
+      <div class="nav-scroll__brand">
+        <span class="nav-scroll__name">Learn to Rise</span>
+      </div>
+      <div class="nav-scroll__right">
+        <a href="contact.html" class="btn btn--primary btn--sm nav-scroll__cta">Book a Free Conversation</a>
+        <button class="nav-scroll__toggle" aria-label="Toggle menu">
+          <span class="nav-scroll__toggle-bar"></span>
+          <span class="nav-scroll__toggle-bar"></span>
+          <span class="nav-scroll__toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- SECTION: page-header -->
+    <section class="page-header">
+      <div class="container text-center">
+        <h1>Learning: Quotes &amp; Insights</h1>
+        <p>A collection of ideas, evidence, and inspiration about learning. Refreshed in a new order each time you visit.</p>
+        <div class="shuffle-wrap reveal" style="margin-top: var(--space-lg); margin-bottom: 0;">
+          <button class="btn btn--secondary btn--shuffle shuffle-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+            Shuffle insights
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- /SECTION: page-header -->
+
+    <!-- SECTION: insights-grid -->
+    <section class="section">
+      <div class="container">
+        <div class="insights-grid reveal-stagger">
+
+          <!-- Quotes -->
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--quote">Quote</span>
+            <p class="insight-card__content">Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+            <p class="insight-card__source">&ndash; Mahatma Gandhi</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--quote">Quote</span>
+            <p class="insight-card__content">Learning never exhausts the mind.</p>
+            <p class="insight-card__source">&ndash; Leonardo da Vinci</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--quote">Quote</span>
+            <p class="insight-card__content">The beautiful thing about learning is that no one can take it away from you.</p>
+            <p class="insight-card__source">&ndash; B.B. King</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--quote">Quote</span>
+            <p class="insight-card__content">Tell me and I forget. Teach me and I remember. Involve me and I learn.</p>
+            <p class="insight-card__source">&ndash; Benjamin Franklin</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--quote">Quote</span>
+            <p class="insight-card__content">Once you stop learning, you start dying.</p>
+            <p class="insight-card__source">&ndash; Albert Einstein</p>
+          </div>
+
+          <!-- Thoughts -->
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
+            <p class="insight-card__content">Learning is not a phase, it's a lifelong skill.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
+            <p class="insight-card__content">Every mistake is data for better learning.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
+            <p class="insight-card__content">Learning happens fastest when curiosity is stronger than fear.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
+            <p class="insight-card__content">Skills expire. Learning doesn't.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
+            <p class="insight-card__content">The best learners aren't the smartest, they're the most consistent.</p>
+          </div>
+
+          <!-- Quick Facts -->
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
+            <p class="insight-card__content">People remember up to 75% more when they actively practise instead of just reading.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
+            <p class="insight-card__content">Teaching others improves understanding. This is known as the prot&eacute;g&eacute; effect.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
+            <p class="insight-card__content">Spaced learning beats cramming, distributing practice over time strengthens memory.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
+            <p class="insight-card__content">Emotion plays a huge role in learning. Feeling safe improves retention.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
+            <p class="insight-card__content">Mistakes strengthen memory when followed by feedback.</p>
+          </div>
+
+          <!-- Practical Wisdom -->
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
+            <p class="insight-card__content">Learning sticks when it's relevant, social, and applied.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
+            <p class="insight-card__content">Reflection turns experience into learning.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
+            <p class="insight-card__content">Progress matters more than perfection.</p>
+          </div>
+
+          <div class="insight-card">
+            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
+            <p class="insight-card__content">Curiosity beats pressure.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /SECTION: insights-grid -->
+
+    <!-- SECTION: cta -->
+    <section class="section cta-banner reveal">
+      <div class="container text-center">
+        <h2>Curious About a Different Approach to Maths?</h2>
+        <p>If your child's relationship with maths could do with some care and attention, a conversation is a good place to start.</p>
+        <a href="contact.html" class="btn btn--accent">Get in Touch</a>
+      </div>
+    </section>
+    <!-- /SECTION: cta -->
+
+  </main>
+
+  <!-- SECTION: footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="footer__brand-name">Learn to Rise</p>
+        <p class="footer__brand-text">Specialist mathematics support for children who need more than a tutor. Cambridge-educated, 20+ years’ experience, limited places.</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Quick Links</p>
+        <div class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="programmes.html" class="footer__link">Programmes &amp; Pricing</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Resources</p>
+        <div class="footer__links">
+          <a href="faq.html" class="footer__link">FAQ</a>
+          <a href="insights.html" class="footer__link">Insights</a>
+          <a href="privacy.html" class="footer__link">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <p class="footer__heading">Get in Touch</p>
+        <div class="footer__contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+          <a href="contact.html" class="footer__link">Send a message</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Learn to Rise. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer__separator">|</span>
+        <span class="footer__credit">Website by <a href="https://www.therapywebgenie.com" target="_blank" rel="noopener noreferrer">Therapy Webgenie</a></span>
+      </div>
+    </div>
+  </footer>
+  <!-- /SECTION: footer -->
+
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <!-- PROFILE:schema -->
-  <!-- /PROFILE:schema -->
-</head>
-<body>
-
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- SECTION: nav -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="container nav__inner">
-      <a href="index.html" class="nav__brand">
-        <!-- PROFILE:logo --><!-- /PROFILE:logo -->
-        <span class="nav__name"><!-- PROFILE:site_title -->Learn to Rise<!-- /PROFILE:site_title --></span>
-      </a>
-      <div class="nav__links">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="programmes.html" class="nav__link">Programmes &amp; Pricing</a>
-        <div class="nav__dropdown">
-          <button class="nav__link nav__link--has-children nav__link--active" aria-expanded="false" aria-haspopup="true">About <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav__dropdown-menu">
-            <a href="about.html" class="nav__dropdown-link">About Learn to Rise</a>
-            <a href="faq.html" class="nav__dropdown-link">FAQ</a>
-            <a href="insights.html" class="nav__dropdown-link nav__dropdown-link--active">Insights</a>
-          </div>
-        </div>
-        <a href="testimonials.html" class="nav__link">Testimonials</a>
-        <a href="contact.html" class="nav__link">Get in Touch</a>
-        <a href="contact.html" class="btn btn--primary nav__cta">Book a Free Conversation</a>
-      </div>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-      </button>
-    </div>
-    <div class="nav__mobile" id="mobile-menu" role="menu">
-      <a href="index.html" class="nav__link" role="menuitem">Home</a>
-      <a href="programmes.html" class="nav__link" role="menuitem">Programmes &amp; Pricing</a>
-      <div class="nav__mobile-group">
-        <div class="nav__mobile-parent">
-          <span class="nav__link" role="menuitem">About</span>
-          <button class="nav__mobile-expand" aria-label="Expand About" aria-expanded="false"><svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        </div>
-        <div class="nav__mobile-children" role="menu" hidden>
-          <a href="about.html" class="nav__link nav__link--child" role="menuitem">About Learn to Rise</a>
-          <a href="faq.html" class="nav__link nav__link--child" role="menuitem">FAQ</a>
-          <a href="insights.html" class="nav__link nav__link--child nav__link--active" role="menuitem">Insights</a>
-        </div>
-      </div>
-      <a href="testimonials.html" class="nav__link" role="menuitem">Testimonials</a>
-      <a href="contact.html" class="nav__link" role="menuitem">Get in Touch</a>
-      <a href="contact.html" class="btn btn--primary" role="menuitem">Book a Free Conversation</a>
-    </div>
-  </nav>
-  <!-- /SECTION: nav -->
-  <div class="nav-scroll" aria-hidden="true">
-    <div class="container nav-scroll__inner">
-      <div class="nav-scroll__brand">
-        <span class="nav-scroll__name">Learn to Rise</span>
-      </div>
-      <div class="nav-scroll__right">
-        <a href="contact.html" class="btn btn--primary btn--sm nav-scroll__cta">Book a Free Conversation</a>
-        <button class="nav-scroll__toggle" aria-label="Toggle menu">
-          <span class="nav-scroll__toggle-bar"></span>
-          <span class="nav-scroll__toggle-bar"></span>
-          <span class="nav-scroll__toggle-bar"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <main id="main">
-
-    <!-- SECTION: page-header -->
-    <section class="page-header">
-      <div class="container text-center">
-        <h1>Learning: Quotes &amp; Insights</h1>
-        <p>A collection of ideas, evidence, and inspiration about learning. Refreshed in a new order each time you visit.</p>
-        <div class="shuffle-wrap reveal" style="margin-top: var(--space-lg); margin-bottom: 0;">
-          <button class="btn btn--secondary btn--shuffle shuffle-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
-            Shuffle insights
-          </button>
-        </div>
-      </div>
-    </section>
-    <!-- /SECTION: page-header -->
-
-    <!-- SECTION: insights-grid -->
-    <section class="section">
-      <div class="container">
-        <div class="insights-grid reveal-stagger">
-
-          <!-- Quotes -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
-            <p class="insight-card__source">&ndash; Mahatma Gandhi</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Learning never exhausts the mind.</p>
-            <p class="insight-card__source">&ndash; Leonardo da Vinci</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">The beautiful thing about learning is that no one can take it away from you.</p>
-            <p class="insight-card__source">&ndash; B.B. King</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Tell me and I forget. Teach me and I remember. Involve me and I learn.</p>
-            <p class="insight-card__source">&ndash; Benjamin Franklin</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Once you stop learning, you start dying.</p>
-            <p class="insight-card__source">&ndash; Albert Einstein</p>
-          </div>
-
-          <!-- Thoughts -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Learning is not a phase, it's a lifelong skill.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Every mistake is data for better learning.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Learning happens fastest when curiosity is stronger than fear.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Skills expire. Learning doesn't.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">The best learners aren't the smartest, they're the most consistent.</p>
-          </div>
-
-          <!-- Quick Facts -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">People remember up to 75% more when they actively practise instead of just reading.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Teaching others improves understanding. This is known as the prot&eacute;g&eacute; effect.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Spaced learning beats cramming, distributing practice over time strengthens memory.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Emotion plays a huge role in learning. Feeling safe improves retention.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Mistakes strengthen memory when followed by feedback.</p>
-          </div>
-
-          <!-- Practical Wisdom -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Learning sticks when it's relevant, social, and applied.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Reflection turns experience into learning.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Progress matters more than perfection.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Curiosity beats pressure.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-- /SECTION: insights-grid -->
-
-    <!-- SECTION: cta -->
-    <section class="section cta-banner reveal">
-      <div class="container text-center">
-        <h2>Curious About a Different Approach to Maths?</h2>
-        <p>If your child's relationship with maths could do with some care and attention, a conversation is a good place to start.</p>
-        <a href="contact.html" class="btn btn--accent">Get in Touch</a>
-      </div>
-    </section>
-    <!-- /SECTION: cta -->
-
-  </main>
-
-  <!-- SECTION: footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <p class="footer__brand-name">Learn to Rise</p>
-        <p class="footer__brand-text">Specialist mathematics support for children who need more than a tutor. Cambridge-educated, 20+ years’ experience, limited places.</p>
-      </div>
-      <div class="footer__col">
-        <p class="footer__heading">Quick Links</p>
-        <div class="footer__links">
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="programmes.html" class="footer__link">Programmes &amp; Pricing</a>
-          <a href="about.html" class="footer__link">About</a>
-          <a href="contact.html" class="footer__link">Contact</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <p class="footer__heading">Resources</p>
-        <div class="footer__links">
-          <a href="faq.html" class="footer__link">FAQ</a>
-          <a href="insights.html" class="footer__link">Insights</a>
-          <a href="privacy.html" class="footer__link">Privacy Policy</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <p class="footer__heading">Get in Touch</p>
-        <div class="footer__contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
-          <a href="contact.html" class="footer__link">Send a message</a>
-        </div>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <p class="footer__copyright">&copy; 2026 Learn to Rise. All rights reserved.</p>
-      <div class="footer__legal">
-        <a href="privacy.html">Privacy Policy</a>
-        <span class="footer__separator">|</span>
-        <span class="footer__credit">Website by <a href="https://www.therapywebgenie.com" target="_blank" rel="noopener noreferrer">Therapy Webgenie</a></span>
-      </div>
-    </div>
-  </footer>
-  <!-- /SECTION: footer -->
-
-  <script src="js/main.js"></script>
-</body>
+  <button class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+  <script src="js/main.js"></script>
+</body>
 </html>
