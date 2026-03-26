@@ -242,4 +242,52 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // -------------------------------------------------
+  // 7. Contact Form Submission
+  // -------------------------------------------------
+  var contactForm = document.getElementById('contact-form');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var submitBtn = contactForm.querySelector('[type="submit"]');
+      var originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      var formData = new FormData(contactForm);
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.success) {
+            contactForm.innerHTML =
+              '<div class="form__success">' +
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>' +
+              '<h3>Message Sent</h3>' +
+              '<p>' + (data.data && data.data.message ? data.data.message : 'Thank you for getting in touch. I’ll respond within two working days.') + '</p>' +
+              '</div>';
+          } else {
+            throw new Error(data.error || 'Something went wrong.');
+          }
+        })
+        .catch(function (err) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          var errorDiv = contactForm.querySelector('.form__error');
+          if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.className = 'form__error';
+            submitBtn.parentNode.insertBefore(errorDiv, submitBtn);
+          }
+          errorDiv.textContent = err.message || 'Something went wrong. Please try again.';
+        });
+    });
+  }
 });
