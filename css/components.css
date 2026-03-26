@@ -674,17 +674,22 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-2xl);
-  align-items: center;
+  align-items: start;
   margin-top: var(--space-md);
 }
 
-.approach__header,
-.approach__footer {
+.approach__header {
   grid-column: 1 / -1;
+  text-align: center;
 }
 
 .approach__header h2 {
   margin-bottom: 0;
+}
+
+.approach__footer {
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
 .approach__footer p {
