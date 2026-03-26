@@ -1,0 +1,39 @@
+/* =============================================
+   THEME: Learn to Rise
+   Palette: Academic Teal  |  Fonts: Editorial
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colour Palette */
+  --color-primary: #2B5F8A;
+  --color-primary-light: #4A7FA0;
+  --color-primary-dark: #1A3D54;
+  --color-secondary: #D4943A;
+  --color-secondary-light: #E0AD5E;
+  --color-secondary-dark: #A06E20;
+  --color-accent: #3B8A7F;
+  --color-accent-light: #5AADA1;
+
+  --color-bg: #FAFAF8;
+  --color-bg-alt: #F2F0EC;
+  --color-bg-dark: #1C2B36;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F7F5F1;
+
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-text-inverse: #FAFAF8;
+  --color-text-heading: #1C2B36;
+
+  --color-border: #DDD9D2;
+  --color-border-light: #ECEAE5;
+
+  --color-success: #3B8A7F;
+  --color-error: #C45B5B;
+
+  /* Typography */
+  --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

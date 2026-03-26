@@ -1,53 +1,28 @@
 /* =============================================
    BASE STYLES
    Reset, Custom Properties, Typography, Layout
+   Theme colours & fonts are in theme.css
    ============================================= */
 
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap');
-
-/* --- Custom Properties --- */
+/* --- Custom Properties (non-theme) --- */
 :root {
-  /* Colour Palette */
-  --color-primary: #2B5F8A;
-  --color-primary-light: #4A7FA0;
-  --color-primary-dark: #1A3D54;
-  --color-secondary: #D4943A;
-  --color-secondary-light: #E0AD5E;
-  --color-secondary-dark: #A06E20;
-  --color-accent: #3B8A7F;
-  --color-accent-light: #5AADA1;
-
-  --color-bg: #FAFAF8;
-  --color-bg-alt: #F2F0EC;
-  --color-bg-dark: #1C2B36;
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #F7F5F1;
-
-  --color-text: #333333;
-  --color-text-light: #666666;
-  --color-text-inverse: #FAFAF8;
-  --color-text-heading: #1C2B36;
-
-  --color-border: #DDD9D2;
-  --color-border-light: #ECEAE5;
-
-  --color-success: #3B8A7F;
-  --color-error: #C45B5B;
-
-  /* Typography */
-  --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
-  --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-md: 1.125rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 1.875rem;
-  --text-3xl: 2.25rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 1rem;
+  --text-base: 1.0625rem;
+  --text-md: 1.1875rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.375rem;
   --text-4xl: 3rem;
+
+  /* Heading sizes (overridable per font pairing in theme.css) */
+  --text-h1: var(--text-3xl);          /* mobile: 38px */
+  --text-h1-desktop: var(--text-4xl);  /* desktop: 48px */
+  --text-h2: var(--text-2xl);          /* mobile: 32px */
+  --text-h2-desktop: var(--text-3xl);  /* desktop: 38px */
+  --text-h3: var(--text-xl);           /* mobile: 26px */
+  --text-h3-desktop: 1.75rem;          /* desktop: 28px */
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -82,15 +57,15 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.12);
 
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
+  --transition-normal: 300ms ease;
   --transition-slow: 400ms ease;
 }
 
@@ -158,23 +133,32 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
   line-height: var(--line-height-tight);
   font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
 }
 
 /* --- Typography --- */
 h1 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-h1);
 }
 
 h2 {
-  font-size: var(--text-2xl);
+  font-size: var(--text-h2);
 }
 
 h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-h3);
 }
 
 h4 {
   font-size: var(--text-lg);
+}
+
+h5 {
+  font-size: var(--text-md);
+}
+
+h6 {
+  font-size: var(--text-base);
 }
 
 p {
@@ -212,6 +196,14 @@ strong {
   background-color: var(--color-bg-alt);
 }
 
+/* Icons inside alt sections: swap bg-alt → surface so they remain visible */
+.section--alt .card__icon,
+.section--alt .icon-box__icon,
+.section--alt .contact-info__icon,
+.section--alt .service-detail__icon {
+  background-color: var(--color-surface);
+}
+
 .section--dark {
   background-color: var(--color-bg-dark);
   color: var(--color-text-inverse);
@@ -221,20 +213,6 @@ strong {
 .section--dark h3,
 .section--dark h4 {
   color: var(--color-text-inverse);
-}
-
-.section--dark .btn--secondary {
-  color: var(--color-text-inverse);
-  border-color: var(--color-text-inverse);
-}
-
-.section--dark .btn--secondary:hover {
-  background-color: var(--color-text-inverse);
-  color: var(--color-bg-dark);
-}
-
-.section--dark .section-label {
-  color: var(--color-secondary-light);
 }
 
 /* Grid */
@@ -278,8 +256,6 @@ strong {
 .btn--primary:hover {
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(43, 95, 138, 0.3);
 }
 
 .btn--secondary {
@@ -291,8 +267,6 @@ strong {
 .btn--secondary:hover {
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(43, 95, 138, 0.2);
 }
 
 .btn--accent {
@@ -304,8 +278,6 @@ strong {
 .btn--accent:hover {
   background-color: var(--color-secondary-dark);
   border-color: var(--color-secondary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 148, 58, 0.3);
 }
 
 .btn--block {
@@ -327,6 +299,10 @@ strong {
 /* --- Text Utilities --- */
 .text-center {
   text-align: center;
+}
+
+.text-center h2 {
+  margin-bottom: var(--space-xl);
 }
 
 .text-balance {
@@ -364,15 +340,15 @@ strong {
 /* --- Responsive Typography --- */
 @media (min-width: 768px) {
   h1 {
-    font-size: var(--text-4xl);
+    font-size: var(--text-h1-desktop);
   }
 
   h2 {
-    font-size: var(--text-3xl);
+    font-size: var(--text-h2-desktop);
   }
 
   h3 {
-    font-size: var(--text-xl);
+    font-size: var(--text-h3-desktop);
   }
 
   .section {
@@ -395,48 +371,6 @@ strong {
 @media (min-width: 1024px) {
   .grid--3 {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* --- Scroll Reveal Animations --- */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger children within reveal containers */
-.reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.reveal-stagger.visible > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
-.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.08s; }
-.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.16s; }
-.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.24s; }
-.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.32s; }
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-stagger > * {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 }
 
