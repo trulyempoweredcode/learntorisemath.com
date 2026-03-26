@@ -678,6 +678,19 @@
   margin-top: var(--space-md);
 }
 
+.approach__header,
+.approach__footer {
+  grid-column: 1 / -1;
+}
+
+.approach__header h2 {
+  margin-bottom: 0;
+}
+
+.approach__footer p {
+  margin-bottom: var(--space-sm);
+}
+
 .approach__content h2 {
   margin-bottom: var(--space-lg);
 }
@@ -729,6 +742,11 @@
   .approach__inner {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-3xl);
+  }
+
+  .approach__header,
+  .approach__footer {
+    grid-column: 1 / -1;
   }
 }
 
