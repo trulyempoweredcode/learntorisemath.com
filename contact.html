@@ -73,7 +73,7 @@
         <span class="nav-scroll__name">Learn to Rise</span>
       </div>
       <div class="nav-scroll__right">
-        <a href="contact.html" class="nav-scroll__cta">Book a Free Conversation</a>
+        <a href="contact.html" class="btn btn--primary btn--sm nav-scroll__cta">Book a Free Conversation</a>
         <button class="nav-scroll__toggle" aria-label="Toggle menu">
           <span class="nav-scroll__toggle-bar"></span>
           <span class="nav-scroll__toggle-bar"></span>
@@ -155,9 +155,14 @@
               </select>
             </div>
 
-            <button type="submit" class="btn btn--primary btn--block">Send Message</button>
+            <div class="form__group form__group--consent">
+              <label class="form__consent">
+                <input type="checkbox" name="consent" value="yes" required>
+                <span class="form__consent-text">I agree to the <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);text-decoration:underline">privacy policy</a>. My information will not be shared with third parties.</span>
+              </label>
+            </div>
 
-            <p class="form__consent">Your information will not be shared with third parties.</p>
+            <button type="submit" class="btn btn--primary btn--block">Send Message</button>
           </form>
 
           <p style="margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-text-light);">Prefer email? You can also reach me directly at <a href="mailto:hello@learntorisemaths.com" class="link">hello@learntorisemaths.com</a></p>

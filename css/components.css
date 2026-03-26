@@ -370,13 +370,8 @@
 .nav-scroll__cta {
   display: none;
   font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
   white-space: nowrap;
-}
-
-.nav-scroll__cta:hover {
-  color: var(--color-primary-dark);
+  padding: var(--space-xs) var(--space-lg);
 }
 
 @media (min-width: 600px) {
@@ -1472,10 +1467,24 @@
   gap: var(--space-lg);
 }
 
+.form__group--consent {
+  margin-top: var(--space-sm);
+}
+
 .form__consent {
-  font-size: var(--text-xs);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
   color: var(--color-text-light);
-  text-align: center;
+  cursor: pointer;
+  line-height: var(--line-height-relaxed);
+}
+
+.form__consent input[type="checkbox"] {
+  margin-top: 4px;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
 }
 
 .form__consent a {
