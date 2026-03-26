@@ -12,6 +12,8 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <!-- PROFILE:schema -->
+  <!-- /PROFILE:schema -->
 </head>
 <body>
 
@@ -21,14 +23,15 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__brand">
-        <span class="nav__name">Learn to Rise</span>
+        <!-- PROFILE:logo --><!-- /PROFILE:logo -->
+        <span class="nav__name"><!-- PROFILE:site_title -->Learn to Rise<!-- /PROFILE:site_title --></span>
       </a>
       <div class="nav__links">
         <a href="index.html" class="nav__link">Home</a>
         <a href="programmes.html" class="nav__link">Programmes &amp; Pricing</a>
-        <div class="nav__item">
-          <a href="about.html" class="nav__link">About</a>
-          <div class="nav__dropdown">
+        <div class="nav__dropdown">
+          <button class="nav__link nav__link--has-children" aria-expanded="false" aria-haspopup="true">About <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav__dropdown-menu">
             <a href="about.html" class="nav__dropdown-link">About Learn to Rise</a>
             <a href="faq.html" class="nav__dropdown-link">FAQ</a>
             <a href="insights.html" class="nav__dropdown-link">Insights</a>
@@ -47,9 +50,17 @@
     <div class="nav__mobile" id="mobile-menu" role="menu">
       <a href="index.html" class="nav__link" role="menuitem">Home</a>
       <a href="programmes.html" class="nav__link" role="menuitem">Programmes &amp; Pricing</a>
-      <a href="about.html" class="nav__link" role="menuitem">About Learn to Rise</a>
-      <a href="faq.html" class="nav__link" role="menuitem">FAQ</a>
-      <a href="insights.html" class="nav__link" role="menuitem">Insights</a>
+      <div class="nav__mobile-group">
+        <div class="nav__mobile-parent">
+          <span class="nav__link" role="menuitem">About</span>
+          <button class="nav__mobile-expand" aria-label="Expand About" aria-expanded="false"><svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="nav__mobile-children" role="menu" hidden>
+          <a href="about.html" class="nav__link nav__link--child" role="menuitem">About Learn to Rise</a>
+          <a href="faq.html" class="nav__link nav__link--child" role="menuitem">FAQ</a>
+          <a href="insights.html" class="nav__link nav__link--child" role="menuitem">Insights</a>
+        </div>
+      </div>
       <a href="testimonials.html" class="nav__link nav__link--active" role="menuitem">Testimonials</a>
       <a href="contact.html" class="nav__link" role="menuitem">Get in Touch</a>
       <a href="contact.html" class="btn btn--primary" role="menuitem">Book a Free Conversation</a>
@@ -174,26 +185,15 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <p class="footer__brand-name">Learn to Rise</p>
-        <p class="footer__brand-text">Specialist 1:1 online maths support for learners aged 9–16.</p>
       </div>
       <div class="footer__col">
-        <p class="footer__heading">Pages</p>
+        <p class="footer__heading">Quick Links</p>
         <div class="footer__links">
           <a href="programmes.html" class="footer__link">Programmes &amp; Pricing</a>
           <a href="about.html" class="footer__link">About</a>
           <a href="testimonials.html" class="footer__link">Testimonials</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <p class="footer__heading">Resources</p>
-        <div class="footer__links">
           <a href="faq.html" class="footer__link">FAQ</a>
           <a href="insights.html" class="footer__link">Insights</a>
-        </div>
-      </div>
-      <div class="footer__col">
-        <p class="footer__heading">Connect</p>
-        <div class="footer__links">
           <a href="contact.html" class="footer__link">Get in Touch</a>
         </div>
       </div>
@@ -202,8 +202,6 @@
       <p class="footer__copyright">&copy; 2026 Learn to Rise. All rights reserved.</p>
       <div class="footer__legal">
         <a href="privacy.html">Privacy Policy</a>
-        <span class="footer__separator">|</span>
-        <span class="footer__credit">Website by <a href="https://www.therapywebgenie.com" target="_blank" rel="noopener noreferrer">Therapy Webgenie</a></span>
       </div>
     </div>
   </footer>

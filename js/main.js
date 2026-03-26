@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileMenu.classList.remove('nav__mobile--open');
       body.style.overflow = '';
       toggle.setAttribute('aria-expanded', 'false');
+      // Collapse all open sub-menus
+      var expandBtns = mobileMenu.querySelectorAll('.nav__mobile-expand');
+      expandBtns.forEach(function (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        var ch = btn.closest('.nav__mobile-group').querySelector('.nav__mobile-children');
+        if (ch) ch.hidden = true;
+      });
     }
 
     toggle.addEventListener('click', function () {
@@ -66,34 +73,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // -------------------------------------------------
-  // 3. Dropdown Navigation
+  // 3. Mobile Sub-menu Accordion (editor-generated nav)
   // -------------------------------------------------
-  var dropdownToggles = document.querySelectorAll('.nav__dropdown-toggle');
+  if (mobileMenu) {
+    var expandBtns = mobileMenu.querySelectorAll('.nav__mobile-expand');
 
-  if (dropdownToggles.length) {
-    var isMobile = function () {
-      return window.innerWidth < 768;
-    };
-
-    dropdownToggles.forEach(function (btn) {
-      var parent = btn.parentElement;
-      var menu = parent.querySelector('.nav__dropdown-menu');
-      if (!menu) return;
-
-      // Desktop: hover open / close
-      parent.addEventListener('mouseenter', function () {
-        if (!isMobile()) menu.classList.add('nav__dropdown-menu--open');
-      });
-      parent.addEventListener('mouseleave', function () {
-        if (!isMobile()) menu.classList.remove('nav__dropdown-menu--open');
-      });
-
-      // Mobile: click toggle
+    expandBtns.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
-        if (isMobile()) {
-          e.preventDefault();
-          menu.classList.toggle('nav__dropdown-menu--open');
-        }
+        e.stopPropagation();
+        var children = btn.closest('.nav__mobile-group').querySelector('.nav__mobile-children');
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        children.hidden = isOpen;
       });
     });
   }
