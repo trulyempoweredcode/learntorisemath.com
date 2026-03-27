@@ -7981,6 +7981,19 @@ a.card--service:hover .card__link {
   color: var(--color-secondary-light);
 }
 
+.page-header .hero__features {
+  justify-content: center;
+}
+
+.page-header .hero__features li {
+  color: var(--color-secondary-light);
+  padding-left: 0;
+}
+
+.page-header .hero__features li::before {
+  display: none;
+}
+
 /* --- CTA Banner decorative orb --- */
 .cta-banner {
   position: relative;
@@ -8087,6 +8100,7 @@ a.card--service:hover .card__link {
   color: var(--color-text-light);
   cursor: pointer;
   line-height: var(--line-height-relaxed);
+  text-align: left;
 }
 
 .form__consent input[type="checkbox"] {
@@ -8095,18 +8109,62 @@ a.card--service:hover .card__link {
   accent-color: var(--color-primary);
 }
 
-/* --- Approach section --- */
-.approach__inner {
-  max-width: var(--container-narrow);
-  margin: 0 auto;
+/* --- Testimonial stars --- */
+.testimonial__stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-md);
+  color: var(--color-secondary);
 }
 
+.testimonial__stars svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* --- Student comments centered --- */
+.student-comments--centered {
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- About page story-split for merged sections --- */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+.about-split__lead h3 {
+  font-weight: 400;
+  line-height: 1.3em;
+  color: var(--color-text-heading);
+}
+
+.about-split__content p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+@media (min-width: 768px) {
+  .about-split {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-2xl);
+  }
+}
+
+/* --- Approach section --- */
 .approach__header {
   margin-bottom: var(--space-2xl);
 }
 
-.approach__content {
-  margin-bottom: var(--space-2xl);
+.approach__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
 }
 
 .approach__content p {
@@ -8115,17 +8173,19 @@ a.card--service:hover .card__link {
   line-height: var(--line-height-relaxed);
 }
 
-.approach__media {
-  margin-bottom: var(--space-2xl);
-}
-
 .approach__footer {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 .approach__footer p {
   color: var(--color-text-light);
   margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .approach__body {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* --- Empathy section --- */
