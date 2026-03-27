@@ -2508,33 +2508,38 @@ a.card--service:hover .card__link {
   .about-hero {
     padding: 0;
     overflow: hidden;
+    max-height: 100vh;
   }
 
   .about-hero .container {
     max-width: 100%;
     padding: 0;
+    height: 100vh;
   }
 
   .about-hero__inner {
     grid-template-columns: 1fr 1fr;
     gap: 0;
+    height: 100vh;
   }
 
   .about-hero__image-wrap {
     overflow: hidden;
-    max-height: 100vh;
+    height: 100%;
   }
 
   .about-hero__image {
     width: 100%;
     height: 100%;
-    max-height: 100vh;
     object-fit: cover;
     border-radius: 0;
   }
 
   .about-hero__inner > div:last-child {
     padding: var(--space-4xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
