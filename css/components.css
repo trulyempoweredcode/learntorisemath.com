@@ -6958,22 +6958,32 @@ a.card--service:hover .card__link {
   line-height: var(--line-height-relaxed);
 }
 
-.about-hero__credentials {
+.about-hero__credentials,
+.credentials-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md) var(--space-xl);
+  gap: var(--space-sm) var(--space-lg);
   margin-top: var(--space-lg);
   padding-top: var(--space-lg);
   border-top: 1px solid var(--color-border-light);
 }
 
-.about-hero__credential {
+.about-hero__credential,
+.credentials-bar__item {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
+  padding-right: var(--space-lg);
+  border-right: 1px solid var(--color-border-light);
+}
+
+.about-hero__credential:last-child,
+.credentials-bar__item:last-child {
+  padding-right: 0;
+  border-right: none;
 }
 
 .about-hero__credential-icon {
@@ -6988,8 +6998,8 @@ a.card--service:hover .card__link {
   }
 
   .about-hero__inner {
-    grid-template-columns: 5fr 7fr;
-    gap: var(--space-3xl);
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-2xl);
   }
 }
 
@@ -7205,8 +7215,20 @@ a.card--service:hover .card__link {
   border-color: var(--color-secondary);
   border-width: 2px;
   position: relative;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--color-secondary) 6%, var(--color-surface)), var(--color-surface));
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pathway-card--featured .pathway-card__name,
+.pathway-card--featured .pathway-card__subtitle,
+.pathway-card--featured .pathway-card__price,
+.pathway-card--featured .pathway-card__price-note {
+  color: var(--color-text-inverse);
+}
+
+.pathway-card--featured .pathway-card__subtitle {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .pathway-card--featured:hover {
