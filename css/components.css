@@ -2508,19 +2508,19 @@ a.card--service:hover .card__link {
   .about-hero {
     padding: 0;
     overflow: hidden;
-    max-height: 100vh;
+    max-height: 70vh;
   }
 
   .about-hero .container {
     max-width: 100%;
     padding: 0;
-    height: 100vh;
+    height: 70vh;
   }
 
   .about-hero__inner {
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    height: 100vh;
+    height: 70vh;
   }
 
   .about-hero__image-wrap {
