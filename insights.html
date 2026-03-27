@@ -86,144 +86,19 @@
 
   <main id="main">
 
-    <!-- SECTION: page-header -->
-    <section class="page-header">
-      <div class="container text-center">
-        <h1>Learning: Quotes &amp; Insights</h1>
-        <p>A collection of ideas, evidence, and inspiration about learning. Refreshed in a new order each time you visit.</p>
-        <div class="shuffle-wrap reveal" style="margin-top: var(--space-lg); margin-bottom: 0;">
-          <button class="btn btn--secondary btn--shuffle shuffle-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
-            Shuffle insights
-          </button>
-        </div>
+    <!-- SECTION: insights -->
+    <section class="insights-fullscreen" id="insights-display">
+      <div class="insights-fullscreen__inner">
+        <div class="insights-fullscreen__quote-mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="insights-fullscreen__quote" id="insight-quote"></blockquote>
+        <p class="insights-fullscreen__source" id="insight-source"></p>
+        <button class="btn btn--secondary insights-fullscreen__refresh" id="insight-refresh" aria-label="Show another insight">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+          Another insight
+        </button>
       </div>
     </section>
-    <!-- /SECTION: page-header -->
-
-    <!-- SECTION: insights-grid -->
-    <section class="section">
-      <div class="container">
-        <div class="insights-grid reveal-stagger">
-
-          <!-- Quotes -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
-            <p class="insight-card__source">&ndash; Mahatma Gandhi</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Learning never exhausts the mind.</p>
-            <p class="insight-card__source">&ndash; Leonardo da Vinci</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">The beautiful thing about learning is that no one can take it away from you.</p>
-            <p class="insight-card__source">&ndash; B.B. King</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Tell me and I forget. Teach me and I remember. Involve me and I learn.</p>
-            <p class="insight-card__source">&ndash; Benjamin Franklin</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--quote">Quote</span>
-            <p class="insight-card__content">Once you stop learning, you start dying.</p>
-            <p class="insight-card__source">&ndash; Albert Einstein</p>
-          </div>
-
-          <!-- Thoughts -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Learning is not a phase, it's a lifelong skill.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Every mistake is data for better learning.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Learning happens fastest when curiosity is stronger than fear.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">Skills expire. Learning doesn't.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Thought</span>
-            <p class="insight-card__content">The best learners aren't the smartest, they're the most consistent.</p>
-          </div>
-
-          <!-- Quick Facts -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">People remember up to 75% more when they actively practise instead of just reading.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Teaching others improves understanding. This is known as the prot&eacute;g&eacute; effect.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Spaced learning beats cramming, distributing practice over time strengthens memory.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Emotion plays a huge role in learning. Feeling safe improves retention.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--fact">Quick Fact</span>
-            <p class="insight-card__content">Mistakes strengthen memory when followed by feedback.</p>
-          </div>
-
-          <!-- Practical Wisdom -->
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Learning sticks when it's relevant, social, and applied.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Reflection turns experience into learning.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Progress matters more than perfection.</p>
-          </div>
-
-          <div class="insight-card">
-            <span class="insight-card__type insight-card__type--wisdom">Practical Wisdom</span>
-            <p class="insight-card__content">Curiosity beats pressure.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <!-- /SECTION: insights-grid -->
-
-    <!-- SECTION: cta -->
-    <section class="section cta-banner reveal">
-      <div class="container text-center">
-        <h2>Curious About a Different Approach to Maths?</h2>
-        <p>If your child's relationship with maths could do with some care and attention, a conversation is a good place to start.</p>
-        <a href="contact.html" class="btn btn--accent">Get in Touch</a>
-      </div>
-    </section>
-    <!-- /SECTION: cta -->
+    <!-- /SECTION: insights -->
 
   </main>
 
@@ -282,6 +157,45 @@
   <button class="back-to-top" aria-label="Back to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
+  <script>
+    (function() {
+      var insights = [
+        { text: "Live as if you were to die tomorrow. Learn as if you were to live forever.", source: "Mahatma Gandhi" },
+        { text: "Learning never exhausts the mind.", source: "Leonardo da Vinci" },
+        { text: "The beautiful thing about learning is that no one can take it away from you.", source: "B.B. King" },
+        { text: "Tell me and I forget. Teach me and I remember. Involve me and I learn.", source: "Benjamin Franklin" },
+        { text: "Once you stop learning, you start dying.", source: "Albert Einstein" },
+        { text: "Learning is not a phase, it\u2019s a lifelong skill.", source: "" },
+        { text: "Every mistake is data for better learning.", source: "" },
+        { text: "Learning happens fastest when curiosity is stronger than fear.", source: "" },
+        { text: "Skills expire. Learning doesn\u2019t.", source: "" },
+        { text: "The best learners aren\u2019t the smartest \u2014 they\u2019re the most consistent.", source: "" },
+        { text: "People remember up to 75% more when they actively practise instead of just reading.", source: "" },
+        { text: "Teaching others improves understanding. This is known as the prot\u00e9g\u00e9 effect.", source: "" },
+        { text: "Spaced learning beats cramming \u2014 distributing practice over time strengthens memory.", source: "" },
+        { text: "Emotion plays a huge role in learning. Feeling safe improves retention.", source: "" },
+        { text: "Mistakes strengthen memory when followed by feedback.", source: "" },
+        { text: "Learning sticks when it\u2019s relevant, social, and applied.", source: "" },
+        { text: "Reflection turns experience into learning.", source: "" },
+        { text: "Progress matters more than perfection.", source: "" },
+        { text: "Curiosity beats pressure.", source: "" }
+      ];
+      var lastIndex = -1;
+
+      function showRandom() {
+        var idx;
+        do { idx = Math.floor(Math.random() * insights.length); } while (idx === lastIndex && insights.length > 1);
+        lastIndex = idx;
+        document.getElementById('insight-quote').textContent = insights[idx].text;
+        var src = document.getElementById('insight-source');
+        src.textContent = insights[idx].source ? '\u2014 ' + insights[idx].source : '';
+        src.style.display = insights[idx].source ? '' : 'none';
+      }
+
+      showRandom();
+      document.getElementById('insight-refresh').addEventListener('click', showRandom);
+    })();
+    </script>
   <script src="js/main.js"></script>
 </body>
 </html>

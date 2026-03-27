@@ -7987,11 +7987,10 @@ a.card--service:hover .card__link {
 
 .page-header .hero__features li {
   color: var(--color-secondary-light);
-  padding-left: 0;
 }
 
 .page-header .hero__features li::before {
-  display: none;
+  background-color: var(--color-secondary);
 }
 
 /* --- CTA Banner decorative orb --- */
@@ -8217,5 +8216,96 @@ a.card--service:hover .card__link {
 @media (min-width: 768px) {
   .empathy__heading {
     font-size: var(--text-3xl);
+  }
+}
+
+/* --- Insights Fullscreen Quote --- */
+.insights-fullscreen {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, color-mix(in srgb, var(--color-primary-dark) 80%, black) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.insights-fullscreen::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(43, 95, 138, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.insights-fullscreen::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 138, 127, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.insights-fullscreen__inner {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.insights-fullscreen__quote-mark {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.08);
+  margin-bottom: -2rem;
+}
+
+.insights-fullscreen__quote {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-text-inverse);
+  margin-bottom: var(--space-xl);
+  border: none;
+  padding: 0;
+}
+
+.insights-fullscreen__source {
+  font-size: var(--text-md);
+  color: var(--color-secondary-light);
+  margin-bottom: var(--space-2xl);
+}
+
+.insights-fullscreen__refresh {
+  color: var(--color-text-inverse);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.insights-fullscreen__refresh:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-inverse);
+}
+
+@media (min-width: 768px) {
+  .insights-fullscreen__quote {
+    font-size: var(--text-3xl);
+  }
+
+  .insights-fullscreen__quote-mark {
+    font-size: 12rem;
+    margin-bottom: -3rem;
   }
 }
