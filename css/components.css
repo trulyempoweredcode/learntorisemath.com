@@ -6910,55 +6910,10 @@ a.card--service:hover .card__link {
 
 
 /* =============================================
-   ABOUT HERO — portrait + credentials layout
+   ABOUT HERO — credentials bar styling
+   (Layout handled by master about-hero component)
    ============================================= */
 
-.about-hero {
-  padding: var(--space-3xl) 0 var(--space-xl);
-}
-
-.about-hero__inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-2xl);
-  align-items: center;
-}
-
-.about-hero__image {
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-}
-
-.about-hero__image-placeholder {
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 3 / 4;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-inverse);
-  font-size: var(--text-base);
-  text-align: center;
-  padding: var(--space-xl);
-  box-shadow: var(--shadow-lg);
-}
-
-.about-hero__content h1 {
-  margin-bottom: var(--space-md);
-}
-
-.about-hero__content p {
-  color: var(--color-text-light);
-  line-height: var(--line-height-relaxed);
-}
-
-.about-hero__credentials,
 .credentials-bar {
   display: flex;
   flex-wrap: wrap;
@@ -6968,7 +6923,6 @@ a.card--service:hover .card__link {
   border-top: 1px solid var(--color-border-light);
 }
 
-.about-hero__credential,
 .credentials-bar__item {
   display: inline-flex;
   align-items: center;
@@ -6980,27 +6934,9 @@ a.card--service:hover .card__link {
   border-right: 1px solid var(--color-border-light);
 }
 
-.about-hero__credential:last-child,
 .credentials-bar__item:last-child {
   padding-right: 0;
   border-right: none;
-}
-
-.about-hero__credential-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--color-primary);
-}
-
-@media (min-width: 768px) {
-  .about-hero {
-    padding: var(--space-4xl) 0 var(--space-2xl);
-  }
-
-  .about-hero__inner {
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--space-2xl);
-  }
 }
 
 
@@ -7215,25 +7151,17 @@ a.card--service:hover .card__link {
   border-color: var(--color-secondary);
   border-width: 2px;
   position: relative;
-  background: var(--color-bg-dark);
-  color: var(--color-text-inverse);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-secondary) 6%, var(--color-surface)), var(--color-surface));
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.pathway-card--featured .pathway-card__name,
-.pathway-card--featured .pathway-card__subtitle,
-.pathway-card--featured .pathway-card__price,
-.pathway-card--featured .pathway-card__price-note {
-  color: var(--color-text-inverse);
-}
-
-.pathway-card--featured .pathway-card__subtitle {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .pathway-card--featured:hover {
   border-color: var(--color-secondary);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.pathway-card--featured .pathway-card__price {
+  color: var(--color-secondary-dark, var(--color-secondary));
 }
 
 .pathway-card--featured .pathway-card__price {
