@@ -102,13 +102,3 @@
     font-size: 8rem;
   }
 }
-
-/* --- YouTube embed: hide title/channel overlay via CSS crop --- */
-.video-embed {
-  overflow: hidden;
-}
-
-.video-embed iframe {
-  transform: scale(1.2);
-  transform-origin: center center;
-}
