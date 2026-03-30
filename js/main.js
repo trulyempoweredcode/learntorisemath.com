@@ -228,7 +228,7 @@
             '<div class="form__success">' +
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>' +
             '<h3>Message Sent</h3>' +
-            '<p>Thank you for getting in touch. I\'ll reply within 24 hours.</p>' +
+            '<p>Thank you for getting in touch. We\'ll get back to you soon.</p>' +
             '</div>';
         })
         .catch(function () {
@@ -380,61 +380,29 @@
   }
 
   /* -----------------------------------------
-     INSIGHTS SHUFFLE
-     Fisher-Yates shuffle for insights grid.
-     ----------------------------------------- */
-  var shuffleBtns = document.querySelectorAll('.shuffle-btn, .btn--shuffle');
-  var insightsGrid = document.querySelector('.insights-grid');
-
-  if (shuffleBtns.length && insightsGrid) {
-    shuffleBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var cards = Array.from(insightsGrid.querySelectorAll('.insight-card'));
-        if (cards.length < 2) return;
-
-        // Fisher-Yates shuffle
-        for (var i = cards.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var temp = cards[i];
-          cards[i] = cards[j];
-          cards[j] = temp;
-        }
-
-        // Fade out, reorder, fade in
-        insightsGrid.style.transition = 'opacity 0.2s ease';
-        insightsGrid.style.opacity = '0';
-
-        setTimeout(function () {
-          cards.forEach(function (card) {
-            insightsGrid.appendChild(card);
-          });
-          insightsGrid.style.opacity = '1';
-
-          insightsGrid.addEventListener('transitionend', function handler() {
-            insightsGrid.style.transition = '';
-            insightsGrid.removeEventListener('transitionend', handler);
-          });
-        }, 200);
-      });
-    });
-  }
-
-  /* -----------------------------------------
      COOKIE CONSENT BANNER
      Show banner if not previously accepted.
      Store preference in localStorage.
      ----------------------------------------- */
   var cookieBanner = document.querySelector('.cookie-banner');
   if (cookieBanner) {
-    var accepted = localStorage.getItem('cookie_consent');
-    if (!accepted) {
+    var consent = localStorage.getItem('cookie_consent');
+    if (!consent) {
       cookieBanner.classList.add('cookie-banner--visible');
     }
 
     var acceptBtn = cookieBanner.querySelector('.cookie-banner__accept');
     if (acceptBtn) {
       acceptBtn.addEventListener('click', function () {
-        localStorage.setItem('cookie_consent', '1');
+        localStorage.setItem('cookie_consent', 'accepted');
+        cookieBanner.classList.remove('cookie-banner--visible');
+      });
+    }
+
+    var declineBtn = cookieBanner.querySelector('.cookie-banner__decline');
+    if (declineBtn) {
+      declineBtn.addEventListener('click', function () {
+        localStorage.setItem('cookie_consent', 'declined');
         cookieBanner.classList.remove('cookie-banner--visible');
       });
     }
