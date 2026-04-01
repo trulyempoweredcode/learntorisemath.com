@@ -42,6 +42,8 @@
 
     var mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(function (link) {
+      // Don't close menu when clicking dropdown parent links — they toggle submenus
+      if (link.closest('.nav__mobile-parent')) return;
       link.addEventListener('click', closeMenu);
     });
 
@@ -69,6 +71,23 @@
         var isOpen = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!isOpen));
         children.hidden = isOpen;
+      });
+    });
+
+    // Also toggle dropdown when clicking the parent link text
+    var parentLinks = mobileMenu.querySelectorAll('.nav__mobile-parent > .nav__link');
+    parentLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var group = link.closest('.nav__mobile-group');
+        var btn = group.querySelector('.nav__mobile-expand');
+        var children = group.querySelector('.nav__mobile-children');
+        if (btn && children) {
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          children.hidden = isOpen;
+        }
       });
     });
   }
@@ -203,6 +222,16 @@
   }
 
   /* -----------------------------------------
+     ANTI-SPAM: Timestamp field
+     Set _t to page load time (epoch ms) so the
+     server can reject instant bot submissions.
+     ----------------------------------------- */
+  var tsField = document.querySelector('input[name="_t"]');
+  if (tsField) {
+    tsField.value = Date.now().toString();
+  }
+
+  /* -----------------------------------------
      CONTACT FORM — AJAX SUBMISSION
      Posts form data via fetch, shows inline
      success/error message, no page reload.
@@ -260,12 +289,18 @@
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px 80px 0px'
     });
 
     revealEls.forEach(function (el) {
-      revealObserver.observe(el);
+      // Immediately reveal elements already in the viewport on page load
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('reveal--visible');
+      } else {
+        revealObserver.observe(el);
+      }
     });
   } else {
     // Fallback: show everything immediately if no IntersectionObserver
@@ -380,16 +415,6 @@
   }
 
   /* -----------------------------------------
-     ANTI-SPAM: Timestamp field
-     Set _t to page load time (epoch ms) so the
-     server can reject instant bot submissions.
-     ----------------------------------------- */
-  var tsField = document.querySelector('input[name="_t"]');
-  if (tsField) {
-    tsField.value = Date.now().toString();
-  }
-
-  /* -----------------------------------------
      COOKIE CONSENT BANNER
      Show banner if not previously accepted.
      Store preference in localStorage.
@@ -416,6 +441,36 @@
         cookieBanner.classList.remove('cookie-banner--visible');
       });
     }
+  }
+
+  /* -----------------------------------------
+     PARALLAX HERO
+     Applies to .hero--parallax: background drifts
+     up at 40% scroll speed, content fades out.
+  ----------------------------------------- */
+  var parallaxHero = document.querySelector('.hero--parallax');
+  if (parallaxHero) {
+    var parallaxContent = parallaxHero.querySelector('.hero__content');
+    var heroHeight = parallaxHero.offsetHeight;
+    var ticking = false;
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var scrollY = window.scrollY || window.pageYOffset;
+          heroHeight = parallaxHero.offsetHeight;
+          if (scrollY <= heroHeight) {
+            parallaxHero.style.backgroundPositionY = 'calc(50% + ' + (scrollY * 0.4) + 'px)';
+            if (parallaxContent) {
+              parallaxContent.style.transform = 'translateY(-' + (scrollY * 0.25) + 'px)';
+              parallaxContent.style.opacity = Math.max(1 - scrollY / (heroHeight * 0.7), 0);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
   }
 
 })();
