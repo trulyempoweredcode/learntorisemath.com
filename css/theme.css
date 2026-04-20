@@ -102,3 +102,29 @@
     font-size: 8rem;
   }
 }
+
+/* Cookie banner decline button — missing from older components.css */
+.cookie-banner__buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.cookie-banner__decline {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.cookie-banner__decline:hover {
+  color: var(--color-text-inverse);
+  border-color: rgba(255, 255, 255, 0.6);
+}
