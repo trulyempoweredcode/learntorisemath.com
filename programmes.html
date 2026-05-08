@@ -24,7 +24,13 @@
       </a>
       <div class="nav__links">
         <a href="index.html" class="nav__link">Home</a>
-        <a href="programmes.html" class="nav__link nav__link--active">Programmes &amp; Pricing</a>
+        <div class="nav__dropdown">
+          <button class="nav__link nav__link--has-children nav__link--active" aria-expanded="false" aria-haspopup="true">Programmes &amp; Pricing <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav__dropdown-menu">
+            <a href="programmes.html" class="nav__dropdown-link nav__dropdown-link--active">Overview</a>
+            <a href="gold-package.html" class="nav__dropdown-link">Gold Package</a>
+          </div>
+        </div>
         <div class="nav__dropdown">
           <button class="nav__link nav__link--has-children" aria-expanded="false" aria-haspopup="true">About <svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav__dropdown-menu">
@@ -45,7 +51,16 @@
     </div>
     <div class="nav__mobile" id="mobile-menu" role="menu">
       <a href="index.html" class="nav__link" role="menuitem">Home</a>
-      <a href="programmes.html" class="nav__link nav__link--active" role="menuitem">Programmes &amp; Pricing</a>
+      <div class="nav__mobile-group">
+        <div class="nav__mobile-parent">
+          <span class="nav__link nav__link--active" role="menuitem">Programmes &amp; Pricing</span>
+          <button class="nav__mobile-expand" aria-label="Expand Programmes" aria-expanded="false"><svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="nav__mobile-children" role="menu" hidden>
+          <a href="programmes.html" class="nav__link nav__link--child nav__link--active" role="menuitem">Overview</a>
+          <a href="gold-package.html" class="nav__link nav__link--child" role="menuitem">Gold Package</a>
+        </div>
+      </div>
       <div class="nav__mobile-group">
         <div class="nav__mobile-parent">
           <span class="nav__link" role="menuitem">About</span>
