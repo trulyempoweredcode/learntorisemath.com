@@ -4924,6 +4924,7 @@ a.card--service:hover .card__link {
 .info-band__icon {
   width: 48px;
   height: 48px;
+  flex-shrink: 0;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.1);
   display: flex;
