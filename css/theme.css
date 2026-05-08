@@ -128,3 +128,67 @@
   color: var(--color-text-inverse);
   border-color: rgba(255, 255, 255, 0.6);
 }
+
+/* =============================================
+   INVESTMENT BLOCK
+   Site-bespoke (used on programmes.html). Restored after v1.5.0
+   framework update removed these rules from components.css.
+   ============================================= */
+.investment {
+  background-color: var(--color-bg-alt);
+}
+
+.investment__inner {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+.investment__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.investment__item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+}
+
+.investment__item-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.investment__item-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.investment__item h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xs);
+}
+
+.investment__item p {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+@media (min-width: 768px) {
+  .investment__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
