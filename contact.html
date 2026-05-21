@@ -125,66 +125,67 @@
           <h2>Send a Message</h2>
           <p>Fill in the form below and I'll respond within two working days. All enquiries are treated with discretion and care.</p>
 
-          <form class="form" id="contact-form" action="https://editmy.site/api/form/6" method="POST" data-thank-you="Thank you for getting in touch. I will respond within two working days.">
-            <div style="display:none"><input type="text" name="_hp" tabindex="-1" autocomplete="off"></div>
-            <input type="hidden" name="_t" value="">
-            <input type="hidden" name="_page" value="">
-            <div class="form__row">
+          <form class="form" action="https://editmy.site/api/form/6" method="POST" data-thank-you="Thank you for your message. We will be in touch soon.">
+              <div style="display:none"><input type="text" name="_hp" tabindex="-1" autocomplete="off"></div>
+              <input type="hidden" name="_t" value="">
+              <input type="hidden" name="_page" value="">
               <div class="form__group">
-                <label for="name" class="form__label form__label--required">Your name</label>
-                <input type="text" id="name" name="name" class="form__input" required>
+                <label for="your_name" class="form__label form__label--required">Your name</label>
+                <input type="text" id="your_name" name="your_name" class="form__input" required>
               </div>
               <div class="form__group">
-                <label for="email" class="form__label form__label--required">Email address</label>
-                <input type="email" id="email" name="email" class="form__input" required>
+                <label for="email_address" class="form__label form__label--required">Email address</label>
+                <input type="email" id="email_address" name="email_address" class="form__input" required autocomplete="email">
               </div>
-            </div>
+              <div class="form__group">
+                <label for="your_name_email_address_child_s_age" class="form__label">Your name
+                
+              
+              
+                Email address
+                
+              
+            
 
-            <div class="form__row">
-              <div class="form__group">
-                <label for="child-age" class="form__label">Child's age</label>
-                <input type="text" id="child-age" name="child_age" class="form__input">
+            
+              
+                Child&#039;s age</label>
+                <input type="text" id="your_name_email_address_child_s_age" name="your_name_email_address_child_s_age" class="form__input">
               </div>
               <div class="form__group">
-                <label for="programme" class="form__label">Programme of interest</label>
-                <select id="programme" name="programme" class="form__select">
-                  <option value="">Not sure yet</option>
-                  <option value="specialist-coaching">Specialist Coaching Programme</option>
-                  <option value="exam-preparation">Examination Preparation Programme</option>
+                <label for="tell_me_a_little_about_your_child_s_experience_with_maths" class="form__label form__label--required">Tell me a little about your child&#039;s experience with maths</label>
+                <textarea id="tell_me_a_little_about_your_child_s_experience_with_maths" name="tell_me_a_little_about_your_child_s_experience_with_maths" class="form__textarea" required></textarea>
+              </div>
+              <div class="form__group">
+                <label for="what_are_you_hoping_will_change_for_your_child_and_what_would_you_most_like_them_to_gain_from_this_support" class="form__label">What are you hoping will change for your child, and what would you most like them to gain from this support?</label>
+                <textarea id="what_are_you_hoping_will_change_for_your_child_and_what_would_you_most_like_them_to_gain_from_this_support" name="what_are_you_hoping_will_change_for_your_child_and_what_would_you_most_like_them_to_gain_from_this_support" class="form__textarea"></textarea>
+              </div>
+              <div class="form__group">
+                <label for="programme_of_interest" class="form__label">Programme of interest</label>
+                <select id="programme_of_interest" name="programme_of_interest" class="form__input">
+                  <option value="">Please select&hellip;</option>
+                  <option value="specialist-coaching">specialist-coaching</option>
+                  <option value="exam-preparation">exam-preparation</option>
                 </select>
               </div>
-            </div>
-
-            <div class="form__group">
-              <label for="experience" class="form__label form__label--required">Tell me a little about your child's experience with maths</label>
-              <textarea id="experience" name="experience" class="form__textarea" required></textarea>
-            </div>
-
-            <div class="form__group">
-              <label for="hopes" class="form__label">What are you hoping will change for your child, and what would you most like them to gain from this support?</label>
-              <textarea id="hopes" name="hopes" class="form__textarea"></textarea>
-            </div>
-
-            <div class="form__group">
-              <label for="referral" class="form__label">How did you hear about Learn to Rise?</label>
-              <select id="referral" name="referral" class="form__select">
-                <option value="">Please select</option>
-                <option value="search-engine">Search engine</option>
-                <option value="referral">Referral / word of mouth</option>
-                <option value="social-media">Social media</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form__group form__group--consent">
-              <label class="form__consent">
-                <input type="checkbox" name="consent" value="yes" required>
-                <span class="form__consent-text">I agree to the <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);text-decoration:underline">privacy policy</a>. My information will not be shared with third parties.</span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn--primary btn--block">Send Message</button>
-          </form>
+              <div class="form__group">
+                <label for="how_did_you_hear_about_learn_to_rise" class="form__label">How did you hear about Learn to Rise?</label>
+                <select id="how_did_you_hear_about_learn_to_rise" name="how_did_you_hear_about_learn_to_rise" class="form__input">
+                  <option value="">Please select&hellip;</option>
+                  <option value="search-engine">search-engine</option>
+                  <option value="referral">referral</option>
+                  <option value="social-media">social-media</option>
+                  <option value="other">other</option>
+                </select>
+              </div>
+              <div class="form__group form__group--checkbox">
+                  <input type="checkbox" id="i_consent_to_my_data_being_stored_and_used_to_respond_to_my_enquiry" name="i_consent_to_my_data_being_stored_and_used_to_respond_to_my_enquiry" value="yes" required>
+                  <label for="i_consent_to_my_data_being_stored_and_used_to_respond_to_my_enquiry">I consent to my data being stored and used to respond to my enquiry.</label>
+              </div>
+              <div>
+                <button type="submit" class="btn btn--primary" style="width: 100%;">Send Message</button>
+              </div>
+            </form>
 
           <p style="margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-text-light);">Prefer email? You can also reach me directly at <a href="mailto:hello@learntorisemath.com" class="link">hello@learntorisemath.com</a></p>
         </div>
