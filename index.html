@@ -398,5 +398,41 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
   </button>
   <script src="js/main.js"></script>
+  <script>
+    /* Mobile conversion: surface Hema's intro video directly beneath the hero.
+       Single source of truth — the video lives in the Approach section and is
+       RELOCATED here on phones only (<=767px). If this script doesn't run the
+       video simply stays in Approach (its normal place), so it is never hidden. */
+    (function () {
+      var media = document.querySelector('.approach__media');
+      var hero = document.querySelector('.hero');
+      if (!media || !hero) return;
+
+      var home = media.parentNode;            // original Approach cell
+      var anchor = media.nextElementSibling;  // marker to restore desktop position
+
+      var mount = document.createElement('div');
+      mount.className = 'home-video-mobile';
+      mount.style.margin = 'var(--space-2xl, 3rem) 0';
+      mount.innerHTML = '<div class="container"></div>';
+      hero.parentNode.insertBefore(mount, hero.nextSibling);
+      var slot = mount.firstChild;
+
+      var mq = window.matchMedia('(max-width: 767px)');
+      function place() {
+        if (mq.matches) {
+          if (media.parentNode !== slot) slot.appendChild(media);
+          mount.style.display = 'block';
+        } else {
+          if (media.parentNode !== home) {
+            anchor ? home.insertBefore(media, anchor) : home.appendChild(media);
+          }
+          mount.style.display = 'none';
+        }
+      }
+      place();
+      mq.addEventListener ? mq.addEventListener('change', place) : mq.addListener(place);
+    })();
+  </script>
 </body>
 </html>
