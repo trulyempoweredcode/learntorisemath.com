@@ -4,21 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Offers specialist 1:1 online maths tutoring for ages 9–16. Personalised support for learners with learning differences, GCSE preparation with Hema Soni">
+  <meta name="robots" content="max-image-preview:large">
   <title>Learn to Rise Math. Specialist Tutoring Ages 9-16. Hema Soni</title>
   <meta property="og:description" content="Specialist 1:1 online maths tutoring for ages 9-16. Personalised support for learners with learning differences, GCSE prep.">
   <meta property="og:title" content="Learn to Rise Math. Specialist Tutoring Ages 9-16. Hema Soni">
-  <meta property="og:image" content="https://www.learntorisemath.com/images/childrenmathstutor.jpg">
+  <meta property="og:image" content="https://www.learntorisemath.com/images/hema-soni-new.jpeg">
   <link rel="canonical" href="https://www.learntorisemath.com/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Stylesheets -->
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="stylesheet" href="css/base.css?v=155">
   <link rel="stylesheet" href="css/components.css?v=155">
   <link rel="stylesheet" href="css/theme.css?v=155">
   <!-- PROFILE:schema -->
   <!-- /PROFILE:schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.learntorisemath.com/",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "contentUrl": "https://www.learntorisemath.com/images/hema-soni-new.jpeg",
+      "width": 896,
+      "height": 1200,
+      "caption": "Hema Soni, Maths Tutor"
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Hema Soni",
+      "jobTitle": "Maths Tutor",
+      "image": "https://www.learntorisemath.com/images/hema-soni-new.jpeg",
+      "worksFor": {
+        "@type": "LocalBusiness",
+        "name": "Learn to Rise Math",
+        "url": "https://www.learntorisemath.com"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -399,29 +427,29 @@
   </button>
   <script src="js/main.js"></script>
   <script>
-    /* Mobile conversion: surface Hema's intro video directly beneath the hero.
+    /* Mobile conversion: surface Hema's intro video inside the hero card,
+       right after the headline/intro and before the bullet list.
        Single source of truth — the video lives in the Approach section and is
        RELOCATED here on phones only (<=767px). If this script doesn't run the
        video simply stays in Approach (its normal place), so it is never hidden. */
     (function () {
       var media = document.querySelector('.approach__media');
-      var hero = document.querySelector('.hero');
-      if (!media || !hero) return;
+      var heroContent = document.querySelector('.hero__content');
+      var heroFeatures = document.querySelector('.hero__features');
+      if (!media || !heroContent || !heroFeatures) return;
 
       var home = media.parentNode;            // original Approach cell
       var anchor = media.nextElementSibling;  // marker to restore desktop position
 
       var mount = document.createElement('div');
       mount.className = 'home-video-mobile';
-      mount.style.margin = 'var(--space-2xl, 3rem) 0';
-      mount.innerHTML = '<div class="container"></div>';
-      hero.parentNode.insertBefore(mount, hero.nextSibling);
-      var slot = mount.firstChild;
+      mount.style.margin = 'var(--space-lg, 1.5rem) 0';
+      heroContent.insertBefore(mount, heroFeatures);
 
       var mq = window.matchMedia('(max-width: 767px)');
       function place() {
         if (mq.matches) {
-          if (media.parentNode !== slot) slot.appendChild(media);
+          if (media.parentNode !== mount) mount.appendChild(media);
           mount.style.display = 'block';
         } else {
           if (media.parentNode !== home) {
