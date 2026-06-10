@@ -329,12 +329,15 @@
 }
 
 .comparison-table-wrap {
+  /* overflow shorthand must come FIRST — it resets both axes, and the
+     overflow-x: auto after it is what lets the wide table scroll
+     sideways on phones instead of stretching the page. */
+  overflow: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin: var(--space-xl) 0;
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
-  overflow: hidden;
 }
 
 .comparison-table thead {
@@ -843,6 +846,14 @@
   background-color: var(--color-secondary);
 }
 
+.cta-banner {
+  /* Clip the decorative glow below — its 600px circle otherwise bleeds
+     ~112px past the right edge on phones and widens the whole page
+     (the "scrollable gap on mobile" bug, fixed 2026-06-10). */
+  position: relative;
+  overflow: hidden;
+}
+
 .cta-banner::before {
   content: '';
   position: absolute;
@@ -1201,3 +1212,74 @@
 }
 
 /* === END BACKFILL === */
+
+/* === FIX 2026-06-10: horizontal scroll gap on mobile ===
+   The closed mobile-nav drawer (visibility:hidden + translateX(100%))
+   still extends the scrollable area on this framework version, leaving
+   a ~113px gap you can scroll into on phones. Current master base.css
+   clips this at the root; this override does the same for this site. */
+html, body { overflow-x: clip; }
+
+/* === FIX 2026-06-10: comparison-table--stack mobile layout ===
+   The programmes.html comparison table ships data-label attributes for a
+   stacked mobile layout, but the CSS for the --stack modifier was never
+   written - so the 488px-wide table stretched the phone layout viewport
+   and created a horizontal pan gap. Below 768px each row becomes a card:
+   the first cell (the criteria name) is the card title, the other cells
+   show their column header from data-label above the value. */
+@media (max-width: 767px) {
+  .comparison-table--stack,
+  .comparison-table--stack tbody,
+  .comparison-table--stack tr,
+  .comparison-table--stack td {
+    display: block;
+    width: 100%;
+  }
+
+  .comparison-table--stack thead {
+    display: none;
+  }
+
+  .comparison-table--stack tr {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .comparison-table--stack tr:last-child {
+    border-bottom: none;
+  }
+
+  .comparison-table--stack tbody tr:nth-child(even) {
+    background-color: transparent;
+  }
+
+  .comparison-table--stack td {
+    border: none;
+    padding: var(--space-xs) 0;
+  }
+
+  .comparison-table--stack td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-light);
+  }
+
+  .comparison-table--stack td:first-child {
+    padding-top: 0;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-heading);
+  }
+
+  .comparison-table--stack td:first-child::before {
+    display: none;
+  }
+}
+
+/* === FIX 2026-06-10: pathway cards grid blowout on mobile ===
+   Grid children default to min-width:auto, so content wider than the
+   1fr column pushes the cards ~7px past the viewport edge. */
+.pathway-grid > * {
+  min-width: 0;
+}
